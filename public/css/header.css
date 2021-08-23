@@ -1,0 +1,16 @@
+header {
+    background-color: #202024;
+    height: 80px;
+}
+
+header nav {
+    height: 50%;
+    align-items: center;
+}
+
+header img {
+    top: 50%;
+    width: 150px;    
+    position: relative;
+    transform: translateY(-50%);
+}
