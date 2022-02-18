@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Model;
 
 class Fornecedores extends Model
@@ -11,4 +12,9 @@ class Fornecedores extends Model
 
     protected $table = 'fornecedores';
     protected $guarded = [];
+
+    public function estado(): HasOne
+    {
+        return $this->hasOne(Estados::class, 'id', 'estado_id');
+    }
 }
