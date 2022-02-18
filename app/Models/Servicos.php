@@ -8,9 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Servicos extends Model
 {
     use HasFactory;
-    protected $table = 'Servico';
-    
-    protected $guarded = [];
 
-    public $timestamps = False;
+    protected $table = 'servicos';
+    protected $guarded = [];
 }

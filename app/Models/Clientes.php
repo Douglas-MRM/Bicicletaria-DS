@@ -8,9 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Clientes extends Model
 {
     use HasFactory;
-    protected $table = 'cliente';
 
+    protected $table = 'clientes';
     protected $guarded = [];
 
-    public $timestamps = False;
+    protected $dates = [
+        'data_nascimento'
+    ];
 }

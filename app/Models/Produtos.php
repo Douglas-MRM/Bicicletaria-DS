@@ -8,9 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Produtos extends Model
 {
     use HasFactory;
-    protected $table = 'produto';
 
+    protected $table = 'produtos';
     protected $guarded = [];
-    
-    public $timestamps = False;
+
+    protected $attributes = [
+        'ativo' => true
+    ];
 }

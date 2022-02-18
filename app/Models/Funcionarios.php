@@ -8,9 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Funcionarios extends Model
 {
     use HasFactory;
-    protected $table = 'Funcionario';
 
-    protected $guarde = [];
-    
-    public $timestamps = False;
+    protected $table = 'funcionarios';
+    protected $guarded = [];
 }
