@@ -8,20 +8,55 @@ Route::get('/', function () {
 })->name('dashboard');
 
 
-// PRODUTOS
-Route::get('/produtos', [Controllers\ProdutosController::class, 'index'])->name('produtos.index');
+/**
+ * Produtos Controller
+ */
+$controller = Controllers\ProdutosController::class;
 
-// SERVIÇOS
-Route::get('/servicos', [Controllers\ServicosController::class, 'index'])->name('servicos.index');
+Route::get('produtos', [$controller, 'index'])
+    ->name('produtos.index');
 
-// FUNCIONARIOS
-Route::get('/funcionarios', [Controllers\FuncionariosController::class, 'index'])->name('funcionarios.index');
 
-// CLIENTES
-Route::get('/clientes', [Controllers\ClientesController::class, 'index'])->name('clientes.index');
+/**
+ * Serviços Controller
+ */
+$controller = Controllers\ServicosController::class;
 
-// FORNECEDORES
-Route::get('/fornecedores', [Controllers\FornecedoresController::class, 'index'])->name('fornecedores.index');
+Route::get('servicos', [$controller, 'index'])
+    ->name('servicos.index');
 
-// ESTOQUE
-Route::get('/estoque', [Controllers\EstoqueController::class, 'index'])->name('estoque.index');
+
+/**
+ * Funcionários Controller
+ */
+$controller = Controllers\FuncionariosController::class;
+
+Route::get('funcionarios', [$controller, 'index'])
+    ->name('funcionarios.index');
+
+
+/**
+ * Clientes Controller
+ */
+$controller = Controllers\ClientesController::class;
+
+Route::get('clientes', [$controller, 'index'])
+    ->name('clientes.index');
+
+
+/**
+ * Fornecedores Controller
+ */
+$controller = Controllers\FornecedoresController::class;
+
+Route::get('fornecedores', [$controller, 'index'])
+    ->name('fornecedores.index');
+
+
+/**
+ * Estoque Controller
+ */
+$controller = Controllers\EstoqueController::class;
+
+Route::get('/estoque', [$controller, 'index'])
+    ->name('estoque.index');
