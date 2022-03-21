@@ -78,6 +78,18 @@ $controller = Controllers\ClientesController::class;
 
 Route::get('clientes', [$controller, 'index'])
     ->name('clientes.index');
+Route::get('clientes/create', [$controller, 'create'])
+    ->name('clientes.create');
+Route::post('clientes/store', [$controller, 'store'])
+    ->name('clientes.store');
+Route::get('clientes/edit/{cliente}', [$controller, 'edit'])
+    ->name('clientes.edit');
+Route::post('clientes/update/{cliente}', [$controller, 'update'])
+    ->name('clientes.update');
+Route::get('clientes/delete/{cliente}', [$controller, 'delete'])
+    ->name('clientes.delete');
+Route::delete('clientes/destroy/{cliente}', [$controller, 'destroy'])
+    ->name('clientes.destroy');
 
 
 /**
