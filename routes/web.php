@@ -99,6 +99,18 @@ $controller = Controllers\FornecedoresController::class;
 
 Route::get('fornecedores', [$controller, 'index'])
     ->name('fornecedores.index');
+Route::get('fornecedores/create', [$controller, 'create'])
+    ->name('fornecedores.create');
+Route::post('fornecedores/store', [$controller, 'store'])
+    ->name('fornecedores.store');
+Route::get('fornecedores/edit/{fornecedor}', [$controller, 'edit'])
+    ->name('fornecedores.edit');
+Route::post('fornecedores/update/{fornecedor}', [$controller, 'update'])
+    ->name('fornecedores.update');
+Route::get('fornecedores/delete/{fornecedor}', [$controller, 'delete'])
+    ->name('fornecedores.delete');
+Route::delete('fornecedores/destroy/{fornecedor}', [$controller, 'destroy'])
+    ->name('fornecedores.destroy');
 
 
 /**
