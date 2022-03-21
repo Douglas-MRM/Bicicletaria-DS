@@ -57,6 +57,18 @@ $controller = Controllers\FuncionariosController::class;
 
 Route::get('funcionarios', [$controller, 'index'])
     ->name('funcionarios.index');
+Route::get('funcionarios/create', [$controller, 'create'])
+    ->name('funcionarios.create');
+Route::post('funcionarios/store', [$controller, 'store'])
+    ->name('funcionarios.store');
+Route::get('funcionarios/edit/{funcionario}', [$controller, 'edit'])
+    ->name('funcionarios.edit');
+Route::post('funcionarios/update/{funcionario}', [$controller, 'update'])
+    ->name('funcionarios.update');
+Route::get('funcionarios/delete/{funcionario}', [$controller, 'delete'])
+    ->name('funcionarios.delete');
+Route::delete('funcionarios/destroy/{funcionario}', [$controller, 'destroy'])
+    ->name('funcionarios.destroy');
 
 
 /**
