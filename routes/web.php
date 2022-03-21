@@ -36,6 +36,18 @@ $controller = Controllers\ServicosController::class;
 
 Route::get('servicos', [$controller, 'index'])
     ->name('servicos.index');
+Route::get('servicos/create', [$controller, 'create'])
+    ->name('servicos.create');
+Route::post('servicos/store', [$controller, 'store'])
+    ->name('servicos.store');
+Route::get('servicos/edit/{servico}', [$controller, 'edit'])
+    ->name('servicos.edit');
+Route::post('servicos/update/{servico}', [$controller, 'update'])
+    ->name('servicos.update');
+Route::get('servicos/delete/{servico}', [$controller, 'delete'])
+    ->name('servicos.delete');
+Route::delete('servicos/destroy/{servico}', [$controller, 'destroy'])
+    ->name('servicos.destroy');
 
 
 /**
