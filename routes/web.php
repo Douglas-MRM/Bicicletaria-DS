@@ -120,3 +120,7 @@ $controller = Controllers\EstoqueController::class;
 
 Route::get('/estoque', [$controller, 'index'])
     ->name('estoque.index');
+Route::post('/estoque/update/{produto}/up', [$controller, 'up'])
+    ->name('estoque.update.up');
+Route::post('/estoque/update/{produto}/down', [$controller, 'down'])
+    ->name('estoque.update.down');
