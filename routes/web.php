@@ -15,6 +15,18 @@ $controller = Controllers\ProdutosController::class;
 
 Route::get('produtos', [$controller, 'index'])
     ->name('produtos.index');
+Route::get('produtos/create', [$controller, 'create'])
+    ->name('produtos.create');
+Route::post('produtos/store', [$controller, 'store'])
+    ->name('produtos.store');
+Route::get('produtos/edit/{produto}', [$controller, 'edit'])
+    ->name('produtos.edit');
+Route::post('produtos/update/{produto}', [$controller, 'update'])
+    ->name('produtos.update');
+Route::get('produtos/delete/{produto}', [$controller, 'delete'])
+    ->name('produtos.delete');
+Route::delete('produtos/destroy/{produto}', [$controller, 'destroy'])
+    ->name('produtos.destroy');
 
 
 /**
