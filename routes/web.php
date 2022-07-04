@@ -3,9 +3,10 @@
 use App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::view('/home', 'home  ', ['menuAtivo' => 'Clientes'])
+    ->name('home');
+
+Route::redirect('/', '/home');
 
 
 /**
@@ -19,13 +20,13 @@ Route::get('produtos/create', [$controller, 'create'])
     ->name('produtos.create');
 Route::post('produtos/store', [$controller, 'store'])
     ->name('produtos.store');
-Route::get('produtos/edit/{produto}', [$controller, 'edit'])
+Route::get('produtos/{produto}/edit', [$controller, 'edit'])
     ->name('produtos.edit');
-Route::post('produtos/update/{produto}', [$controller, 'update'])
+Route::post('produtos/{produto}/update', [$controller, 'update'])
     ->name('produtos.update');
-Route::get('produtos/delete/{produto}', [$controller, 'delete'])
+Route::get('produtos/{produto}/delete', [$controller, 'delete'])
     ->name('produtos.delete');
-Route::delete('produtos/destroy/{produto}', [$controller, 'destroy'])
+Route::delete('produtos/{produto}/destroy', [$controller, 'destroy'])
     ->name('produtos.destroy');
 
 
@@ -40,13 +41,13 @@ Route::get('servicos/create', [$controller, 'create'])
     ->name('servicos.create');
 Route::post('servicos/store', [$controller, 'store'])
     ->name('servicos.store');
-Route::get('servicos/edit/{servico}', [$controller, 'edit'])
+Route::get('servicos/{servico}/edit', [$controller, 'edit'])
     ->name('servicos.edit');
-Route::post('servicos/update/{servico}', [$controller, 'update'])
+Route::post('servicos/{servico}/update', [$controller, 'update'])
     ->name('servicos.update');
-Route::get('servicos/delete/{servico}', [$controller, 'delete'])
+Route::get('servicos/{servico}/delete', [$controller, 'delete'])
     ->name('servicos.delete');
-Route::delete('servicos/destroy/{servico}', [$controller, 'destroy'])
+Route::delete('servicos/{servico}/destroy', [$controller, 'destroy'])
     ->name('servicos.destroy');
 
 
@@ -61,13 +62,13 @@ Route::get('funcionarios/create', [$controller, 'create'])
     ->name('funcionarios.create');
 Route::post('funcionarios/store', [$controller, 'store'])
     ->name('funcionarios.store');
-Route::get('funcionarios/edit/{funcionario}', [$controller, 'edit'])
+Route::get('funcionarios/{funcionario}/edit', [$controller, 'edit'])
     ->name('funcionarios.edit');
-Route::post('funcionarios/update/{funcionario}', [$controller, 'update'])
+Route::post('funcionarios/{funcionario}/update', [$controller, 'update'])
     ->name('funcionarios.update');
-Route::get('funcionarios/delete/{funcionario}', [$controller, 'delete'])
+Route::get('funcionarios/{funcionario}/delete', [$controller, 'delete'])
     ->name('funcionarios.delete');
-Route::delete('funcionarios/destroy/{funcionario}', [$controller, 'destroy'])
+Route::delete('funcionarios/{funcionario}/destroy', [$controller, 'destroy'])
     ->name('funcionarios.destroy');
 
 
@@ -82,13 +83,13 @@ Route::get('clientes/create', [$controller, 'create'])
     ->name('clientes.create');
 Route::post('clientes/store', [$controller, 'store'])
     ->name('clientes.store');
-Route::get('clientes/edit/{cliente}', [$controller, 'edit'])
+Route::get('clientes/{cliente}/edit', [$controller, 'edit'])
     ->name('clientes.edit');
-Route::post('clientes/update/{cliente}', [$controller, 'update'])
+Route::post('clientes/{cliente}/update', [$controller, 'update'])
     ->name('clientes.update');
-Route::get('clientes/delete/{cliente}', [$controller, 'delete'])
+Route::get('clientes/{cliente}/delete', [$controller, 'delete'])
     ->name('clientes.delete');
-Route::delete('clientes/destroy/{cliente}', [$controller, 'destroy'])
+Route::delete('clientes/{cliente}/destroy', [$controller, 'destroy'])
     ->name('clientes.destroy');
 
 
@@ -103,13 +104,13 @@ Route::get('fornecedores/create', [$controller, 'create'])
     ->name('fornecedores.create');
 Route::post('fornecedores/store', [$controller, 'store'])
     ->name('fornecedores.store');
-Route::get('fornecedores/edit/{fornecedor}', [$controller, 'edit'])
+Route::get('fornecedores/{fornecedor}/edit', [$controller, 'edit'])
     ->name('fornecedores.edit');
-Route::post('fornecedores/update/{fornecedor}', [$controller, 'update'])
+Route::post('fornecedores/{fornecedor}/update', [$controller, 'update'])
     ->name('fornecedores.update');
-Route::get('fornecedores/delete/{fornecedor}', [$controller, 'delete'])
+Route::get('fornecedores/{fornecedor}/delete', [$controller, 'delete'])
     ->name('fornecedores.delete');
-Route::delete('fornecedores/destroy/{fornecedor}', [$controller, 'destroy'])
+Route::delete('fornecedores/{fornecedor}/destroy', [$controller, 'destroy'])
     ->name('fornecedores.destroy');
 
 
@@ -120,7 +121,7 @@ $controller = Controllers\EstoqueController::class;
 
 Route::get('/estoque', [$controller, 'index'])
     ->name('estoque.index');
-Route::post('/estoque/update/{produto}/up', [$controller, 'up'])
+Route::post('/estoque/{produto}/update/up', [$controller, 'up'])
     ->name('estoque.update.up');
-Route::post('/estoque/update/{produto}/down', [$controller, 'down'])
+Route::post('/estoque/{produto}/update/down', [$controller, 'down'])
     ->name('estoque.update.down');
